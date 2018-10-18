@@ -52,9 +52,9 @@ module Mongoid
 
       field(
         :_id,
-        default: ->{ BSON::ObjectId.new },
+        default: ->{ BSON::ObjectId.new.to_s },
         pre_processed: true,
-        type: BSON::ObjectId
+        type: String
       )
 
       alias :id :_id
